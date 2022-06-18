@@ -49,5 +49,20 @@ class CrmController extends Controller
             'remained_all:' =>$remained_all,            
         ], 200);
     }
-    
+    public function get_all(Request $req) {
+        try{
+            $data = Crm::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
 }

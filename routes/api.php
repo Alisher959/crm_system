@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/post',[CrmController::class,'crm']);
 Route::get('/get',[CrmController::class,'all_data']);
+Route::get('/get_all',[CrmController::class,'get_all']);
